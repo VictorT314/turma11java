@@ -13,9 +13,9 @@ programa
 		leia(c)
 		escreva("Insira o valor de d: ")
 		leia(d)
-		escreva("Insira o valor de f: ")
+		escreva("Insira o valor de e: ")
 		leia(E)
-		escreva("Insira o valor de g: ")
+		escreva("Insira o valor de f: ")
 		leia(f)
 
 		x = (c*E - b*f)/(a*E - b*d)
