@@ -3,7 +3,7 @@ programa
 	
 	funcao inicio()
 	{
-		real a = 0, b = 0, c = 0, d = 0, E = 0, f = 0, x = 0, y = 0
+		real a, b, c, d, E, f, x = 0, y = 0
 
 		escreva("Insira o valor de a: ")
 		leia(a)
