@@ -4,7 +4,7 @@ programa
 	
 	funcao inicio()
 	{
-		real x1, x2, y1, y2, d
+		real x1, x2, y1, y2, d = 0.00
 
 		escreva("Insira a abscissa do primeiro ponto (x1): ")
 		leia(x1)
