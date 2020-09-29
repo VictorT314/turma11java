@@ -3,7 +3,7 @@ programa
 	
 	funcao inicio()
 	{
-		real custoConsumidor, custoFabrica, custo
+		real custoFabrica, custo
 
 		escreva("Informe o custo de fábrica: ")
 		leia(custoFabrica)
