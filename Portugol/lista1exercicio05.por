@@ -3,7 +3,7 @@ programa
 	
 	funcao inicio()
 	{
-		real nota1, nota2, nota3, media
+		real nota1, nota2, nota3, media = 0.00
 
 		escreva("Insira a nota1: ")
 		leia(nota1)
