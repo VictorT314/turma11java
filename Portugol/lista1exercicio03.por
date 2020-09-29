@@ -3,16 +3,14 @@ programa
 	
 	funcao inicio()
 	{
-		inteiro duracaoEvento, horas = 0, minutos = 0, segundos = 0, restante = 0
+		inteiro duracaoEvento, horas = 0, minutos = 0, segundos = 0
 
 		escreva("Informe a duração do evento (em segundos): ")
 		leia(duracaoEvento)
 
 		horas = duracaoEvento / 3600
-		restante = duracaoEvento % 3600
-		minutos = restante / 60
-		restante = restante % 60
-		segundos = restante
+		minutos = (duracaoEvento % 3600)/ 60
+		segundos = (duracaoEvento % 3600) % 60
 
 		escreva("O evento durou " + horas + " horas, " + minutos + " minutos e " + segundos + " segundos.")
 		
