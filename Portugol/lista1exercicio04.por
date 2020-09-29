@@ -4,7 +4,7 @@ programa
 	
 	funcao inicio()
 	{
-		inteiro A, B, C, D, R, S
+		inteiro A, B, C, D = 0, R = 0, S = 0
 
 		escreva("Insira um valor para A: ")
 		leia(A)
