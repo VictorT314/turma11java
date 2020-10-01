@@ -1,5 +1,6 @@
 programa
 {
+	inclua biblioteca Util
 	
 	funcao inicio()
 	{
@@ -8,22 +9,12 @@ programa
 
 		para(i = 0; i < 4; i++){
 			para(j = 0; j < 6; j++){
-				escreva("Digite o elemento N1[" + i + "][" + j + "]: ")
-				leia(N1[i][j])
+				N1[i][j] = Util.sorteia(1, 100)
+				N2[i][j] = Util.sorteia(1, 100)
 				limpa()
 			}
 		}
 		
-		limpa()
-		para(i = 0; i < 4; i++){
-			para(j = 0; j < 6; j++){
-				escreva("Digite o elemento N2[" + i + "][" + j + "]: ")
-				leia(N2[i][j])
-				limpa()
-			}
-		}
-
-		limpa()
 		para(i = 0; i < 4; i++){
 			para(j = 0; j < 6; j++){
 				M1[i][j] = N1[i][j] + N2[i][j]
@@ -91,7 +82,7 @@ programa
  * Esta seção do arquivo guarda informações do Portugol Studio.
  * Você pode apagá-la se estiver utilizando outro editor.
  * 
- * @POSICAO-CURSOR = 1351; 
+ * @POSICAO-CURSOR = 341; 
  * @PONTOS-DE-PARADA = ;
  * @SIMBOLOS-INSPECIONADOS = ;
  * @FILTRO-ARVORE-TIPOS-DE-DADO = inteiro, real, logico, cadeia, caracter, vazio;
