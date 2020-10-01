@@ -11,14 +11,9 @@ programa
 			para(j = 0; j < 6; j++){
 				N1[i][j] = Util.sorteia(1, 100)
 				N2[i][j] = Util.sorteia(1, 100)
-				limpa()
-			}
-		}
-		
-		para(i = 0; i < 4; i++){
-			para(j = 0; j < 6; j++){
 				M1[i][j] = N1[i][j] + N2[i][j]
 				M2[i][j] = N1[i][j] - N2[i][j]
+				limpa()
 			}
 		}
 		
@@ -82,7 +77,7 @@ programa
  * Esta seção do arquivo guarda informações do Portugol Studio.
  * Você pode apagá-la se estiver utilizando outro editor.
  * 
- * @POSICAO-CURSOR = 341; 
+ * @POSICAO-CURSOR = 381; 
  * @PONTOS-DE-PARADA = ;
  * @SIMBOLOS-INSPECIONADOS = ;
  * @FILTRO-ARVORE-TIPOS-DE-DADO = inteiro, real, logico, cadeia, caracter, vazio;
