@@ -2,7 +2,7 @@ package Loja;
 
 import java.util.Scanner;
 
-public class Teste {
+public class LojaMundoInvertido {
 
 	public static void main(String[] args) {
 
