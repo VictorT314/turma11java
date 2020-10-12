@@ -43,6 +43,7 @@ public class LojaMundoInvertido {
 							precos[indice], quantidadesEstoque[indice]);
 					pulaLinha();
 					pulaLinha();
+					System.out.print("Quantas unidades você deseja?: ");
 					unidade = unidadeEscolhida(indice, quantidadesEstoque);
 					limpa();
 					pulaLinha();
@@ -56,7 +57,7 @@ public class LojaMundoInvertido {
 					System.out.printf("Subtotal: R$ %.2f ", subtotal);
 					pulaLinha();
 					pulaLinha();
-					System.out.print("Deseja Continuar comprando?! S-sim ou N-não:  "); // loop da compra
+					System.out.print("Deseja continuar comprando?! S-sim ou N-não:  "); // loop da compra
 					opcCompra = tec.next().toUpperCase().charAt(0);
 					limpa();
 					System.out.println("Seu Carrinho:");
@@ -87,12 +88,7 @@ public class LojaMundoInvertido {
 							precos[indice], quantidadeCarrinho[indice]);
 					pulaLinha();
 					System.out.print("Quantas unidades você deseja remover?: ");
-					unidade = tec.nextInt();
-					while (unidade > quantidadeCarrinho[indice]) {
-						System.out.println("Quantidade maior do que a disponível no carrinho!");
-						System.out.print("Quantas unidades você deseja remover?: ");
-						unidade = tec.nextInt();
-					}
+					unidade = unidadeEscolhida(indice, quantidadeCarrinho);
 					limpa();
 					quantidadesEstoque[indice] = (quantidadesEstoque[indice] + unidade);
 					quantidadeCarrinho[indice] = (quantidadeCarrinho[indice] - unidade);
@@ -296,14 +292,12 @@ public class LojaMundoInvertido {
 
 	// UNIDADES ESCOLHIDAS DO PRODUTO
 
-	public static int unidadeEscolhida(int indice, int quantidadesEstoque[]) {
+	public static int unidadeEscolhida(int indice, int quantidades[]) {
 		Scanner tec = new Scanner(System.in);
 		int unidade;
-		System.out.print("Quantas unidades você deseja?: ");
 		unidade = tec.nextInt();
-		while (unidade > quantidadesEstoque[indice]) {
-			System.out.println("A quantidade escolhida não pode ser maior do que a que temos em estoque!");
-			System.out.print("Quantas unidades você deseja?: ");
+		while (unidade > quantidades[indice]) {
+			System.out.print("A quantidade escolhida não pode ser maior do que a disponível! Tente novamente: ");
 			unidade = tec.nextInt();
 		}
 		return unidade;
