@@ -12,7 +12,7 @@ import entidades.Cliente;
  * objeto cliente, defina as instâncias deste objeto e 
  * apresente as informações deste objeto no console.
  */
-public class lista04Exercicio01 {
+public class Lista04Exercicio01 {
 
 	public static void main(String[] args) {
 		Scanner sc = new Scanner(System.in);
