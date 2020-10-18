@@ -20,6 +20,7 @@ public class Banco {
 		List<ContaCorrente> CC = new ArrayList<>();
 		List<ContaEspecial> CCE = new ArrayList<>();
 		List<ContaEmpresa> CEMP = new ArrayList<>();
+		List<String> nomes = new ArrayList<>();
 		List<Integer> contas = new ArrayList<>();
 		List<Integer> senhas = new ArrayList<>();
 
@@ -170,35 +171,35 @@ public class Banco {
 			System.out.print("Informe a senha de sua CC: ");
 			senha = sc.nextInt();
 			testeSenha(numero, senha, contas, senhas);
+		
 		}
 		if (numero >= 6001 && numero <= 8000) {
 			numero = cce.testeConta(CCE, numero);
 			System.out.print("Informe a senha de sua CCE: ");
 			senha = sc.nextInt();
 			testeSenha(numero, senha, contas, senhas);
+			
 		}
 		if (numero >= 8001 && numero <= 9999) {
 			numero = cemp.testeConta(CEMP, numero);
 			System.out.print("Informe a senha de sua conta empresarial: ");
 			senha = sc.nextInt();
 			testeSenha(numero, senha, contas, senhas);
+			
 		}
-
-		System.out.println("Saí do looping");
+		
 
 	}
-
-	/*
-	 * //TESTE NUMERO DE CONTA POUPANCA public static int testeConta(List
-	 * <ContaPoupanca> Conta, int numeroConta) { Scanner sc = new
-	 * Scanner(System.in); boolean testeNumero = false; for (ContaBancaria i :
-	 * Conta) { if(numeroConta == i.getNumero()) { testeNumero = true; } }
-	 * while(testeNumero == false) {
-	 * System.out.println("Erro! Por favor, informe um número de conta válido!");
-	 * System.out.print("Número da conta: "); numeroConta = sc.nextInt(); for
-	 * (ContaBancaria i : Conta) { if(numeroConta == i.getNumero()) { testeNumero =
-	 * true; } } } return numeroConta; }
-	 */
+	
+	//ACESSAR CONTA POUPANÇA
+	public static void acessarCPP(List<ContaPoupanca> CPP) {
+		Scanner sc = new Scanner(System.in);
+		char opc;
+		
+		System.out.println("Olá, ");
+		
+	}
+	
 	// MENU CRIAR CONTA
 	public static byte criarConta() {
 		Scanner sc = new Scanner(System.in);
@@ -728,23 +729,46 @@ public class Banco {
 	
 	//TESTER DE SENHA
 	public static void testeSenha(int numero, int senha, List contas, List senhas) {
+		Scanner sc = new Scanner(System.in);
 		boolean testeSenha = false;
 		int indice = 0;
+		int contador = 3;
+		boolean aprovado = false;
 		
 		indice = (int) contas.indexOf(numero);
-		
 		if (senha == (int) senhas.get(indice)) {
 			testeSenha = true;
 		}
-		System.out.println(testeSenha);
+		
+		while(contador > 0 && testeSenha == false) {
+			limpar();
+			contador--;
+			System.out.println("Senha incorreta! Você tem mais " + contador + " tentativas apenas!");
+			System.out.print("Digite a senha novamente: ");
+			senha = sc.nextInt();
+			if (senha == (int) senhas.get(indice)) {
+				testeSenha = true;
+			}
+		}
+		if (testeSenha) {
+			System.out.print("Redirecionando");
+			aguardar();
+			limpar();
+			aprovado = true;
+		}
+		else {
+			System.out.print("Muitas tentativas incorretas! Você será redirecionado para o início");
+			aguardar();
+			limpar();
+		}
 	}
 
-	// AGUARDAR 3,6s
+	// AGUARDAR 3s
 	public static void aguardar() {
 		try {
 			for (int i = 0; i < 3; i++) {
 				System.out.print(".");
-				Thread.sleep(1200);
+				Thread.sleep(1000);
 			}
 		} catch (Exception e) {
 		}
