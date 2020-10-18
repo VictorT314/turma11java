@@ -1,8 +1,12 @@
 package entities;
 
+import java.util.List;
+import java.util.Scanner;
+
 public abstract class ContaBancaria {
 	
 	protected int numero;
+	private int senha;
 	protected double saldo;
 	protected String nomeCompletoCliente;
 	protected long cpf;
@@ -32,6 +36,10 @@ public abstract class ContaBancaria {
 		this.numero = numero;
 	}
 
+	public ContaBancaria(int numero, int senha) {
+		this.numero = numero;
+		this.senha = senha;
+	}
 
 	//GETTERS + SETTERS
 	public int getNumero() {
@@ -62,6 +70,13 @@ public abstract class ContaBancaria {
 		this.cpf = cpf;
 	}
 	
+	public int getSenha() {
+		return senha;
+	}
+
+	public void setSenha(int senha) {
+		this.senha = senha;
+	}	
 	
 	//MÉTODOS
 
@@ -91,5 +106,28 @@ public abstract class ContaBancaria {
 	public String toString() {
 		return "Número da conta: " + numero + "; \nNome: " + nomeCompletoCliente + "; \nCPF: " + cpf + "; \nMês de Aniversário: ";
 	}
+	
+	//TESTAS NÚMERO CONTA
+	public int testeConta(List <ContaBancaria> Conta, int numeroConta) {
+		Scanner sc = new Scanner(System.in);
+		boolean testeNumero = false;
+		for (ContaBancaria i : Conta) {
+			if(numeroConta == i.getNumero()) {
+				testeNumero = true;
+			}
+		}
+		while(testeNumero == false) {
+			System.out.println("Erro! Por favor, informe um número de conta válido!");
+			System.out.print("Número da conta: ");
+			numeroConta = sc.nextInt();
+			for (ContaBancaria i : Conta) {
+				if(numeroConta == i.getNumero()) {
+					testeNumero = true;
+				}
+			}
+		}
+		return numeroConta;
+	}
+	
 
 }
