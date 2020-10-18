@@ -25,11 +25,12 @@ public abstract class ContaBancaria {
 		this.nomeCompletoCliente = nomeCompleto;
 	}
 	
-	public ContaBancaria(String nomeCompleto, long cpf, int numero, double saldo) {
+	public ContaBancaria(String nomeCompleto, int senha, long cpf, int numero, double saldo) {
 		this.nomeCompletoCliente = nomeCompleto;
 		this.cpf = cpf;
 		this.numero = numero;
 		this.saldo = saldo;
+		this.senha = senha;
 	}
 	
 	public ContaBancaria(int numero) {

@@ -5,6 +5,16 @@ import java.util.Scanner;
 
 public class ContaEspecial extends ContaCorrente {
 
+	
+	//CONSTRUTORES
+	public ContaEspecial() {
+		
+	}
+	
+	public ContaEspecial (String nomeCompleto, int senha, long cpf, int numero, double saldo) {
+		super(nomeCompleto, senha, cpf, numero, saldo);
+	}
+	
 	//MÉTODOS
 	@Override
 	public int testeConta(List <ContaBancaria> Conta, int numeroConta) {

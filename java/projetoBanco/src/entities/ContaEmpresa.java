@@ -5,6 +5,20 @@ import java.util.Scanner;
 
 public class ContaEmpresa extends ContaBancaria{
 
+	private String nomeEmpresa;
+	private long cnpj;
+	
+	//CONSTRUTORES
+	public ContaEmpresa() {
+		
+	}
+	
+	public ContaEmpresa(String nomeCompleto, int senha, long cpf, String nomeEmpresa, long cnpj, int numero, double saldo) {
+		super(nomeCompleto, senha, cpf, numero, saldo);
+		this.nomeEmpresa = nomeEmpresa;
+		this.cnpj = cnpj;
+	}
+	
 	//MÉTODOS
 	@Override
 	public int testeConta(List <ContaBancaria> Conta, int numeroConta) {

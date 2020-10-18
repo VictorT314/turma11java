@@ -15,8 +15,8 @@ public class ContaPoupanca extends ContaBancaria{
 		
 	}
 
-	public ContaPoupanca(String nomeCompleto, long cpf, int mesAniversario, int numero, double saldo) {
-		super(nomeCompleto, cpf, numero, saldo);
+	public ContaPoupanca(String nomeCompleto, int senha, long cpf, int mesAniversario, int numero, double saldo) {
+		super(nomeCompleto, senha, cpf, numero, saldo);
 		this.mesAniversario = mesAniversario;
 	}
 
