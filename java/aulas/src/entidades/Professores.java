@@ -1,6 +1,6 @@
 package entidades;
 
-public class Professor {
+public class Professores {
 	
 	public String nome;
 	public char sexo;

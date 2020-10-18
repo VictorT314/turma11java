@@ -8,8 +8,12 @@ public class ContaPoupanca extends ContaBancaria{
 	
 	
 	//CONSTRUTORES
-	public ContaPoupanca(String nomeCompleto, long cpf, int mesAniversario) {
-		super(nomeCompleto, cpf);
+	public ContaPoupanca () {
+		
+	}
+
+	public ContaPoupanca(String nomeCompleto, long cpf, int mesAniversario, int numero, double saldo) {
+		super(nomeCompleto, cpf, numero, saldo);
 		this.mesAniversario = mesAniversario;
 	}
 
@@ -48,7 +52,7 @@ public class ContaPoupanca extends ContaBancaria{
 	//IMPRIMIR DADOS DA CONTA
 	@Override
 	public String toString() {
-		return "Número da conta: " + super.numero + "; \nNome: " + super.nomeCompletoCliente + "; \nCPF: " + super.cpf + "; \nMês de Aniversário: " + mesAniversario;
+		return "Nº da CPP: " + super.numero + "; \nNome: " + super.nomeCompletoCliente + "; \nCPF: " + super.cpf + "; \nMês de Aniversário: " + mesAniversario + "; \nSaldo: R$ " + saldo;
 	}
 	
 }
