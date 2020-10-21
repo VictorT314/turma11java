@@ -121,14 +121,14 @@ public class BancoElevencash {
 					valorJuros = poupanca.jurosPoupanca(poupanca.getSaldo());
 					System.out.printf("Valor dos juros: R$ %.2f", valorJuros);
 					pular();
-					poupanca.debite(valorJuros);
+					poupanca.credite(valorJuros);
 				}
 			}
 
 			while (servico != 6);
 			System.out.println("FIM DA OPERAÇÃO");
 		}
-		// Conta Corrente
+
 		else if (tipo1 == 2) {
 			System.out.println("CONTA CORRENTE");
 			System.out.print("Digite o nome do cliente: ");
