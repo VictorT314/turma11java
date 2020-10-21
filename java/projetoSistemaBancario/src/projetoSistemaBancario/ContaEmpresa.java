@@ -5,7 +5,7 @@ import java.util.Random;
 import java.util.Scanner;
 
 public class ContaEmpresa extends ContaBancaria {
-
+	
 	private double limiteEmpresa;
 	private double limiteUsado;
 
@@ -14,8 +14,8 @@ public class ContaEmpresa extends ContaBancaria {
 
 	}
 
-	public ContaEmpresa(String nome, long cpf, int numero, int senha, double saldo) {
-		super(nome, cpf, numero, senha, saldo);
+	public ContaEmpresa(String nome, long cpf, String nomeEmpresa, long cnpj, int numero, int senha, double saldo) {
+		super(nome, cpf, nomeEmpresa, cnpj, numero, senha, saldo);
 
 	}
 
@@ -29,7 +29,7 @@ public class ContaEmpresa extends ContaBancaria {
 	}
 
 	// MÉTODOS
-
+	//EMPRÉSTIMO
 	public double emprestimoEmpresarial() {
 		if(limiteUsado/limiteEmpresa <= 0.5) {
 			super.credite(limiteEmpresa*2);

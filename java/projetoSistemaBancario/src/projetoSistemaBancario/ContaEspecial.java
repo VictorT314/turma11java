@@ -28,7 +28,8 @@ public class ContaEspecial extends ContaCorrente {
 	}
 
 	// MÉTODOS
-	public double calculaJuros() {
+	//JUROS
+	public double calculaJuros(double saldo) {
 		super.credite(super.getSaldo()*0.02);
 		return super.getSaldo();
 	}

@@ -48,11 +48,13 @@ public class ContaPoupanca extends ContaBancaria {
 	}
 
 	// MÉTODOS
-	public void aniversarioMes() {
-		int mes = 0;
-		if(mesAniversario == mes) {
-		super.credite( super.getSaldo() * corrMonetaria);
-		}
+	//CORREÇÃO PELO MÊS
+	public double aniversarioMes(double saldo) {
+		return super.getSaldo()*0.03;
+	}
+	//JUROS
+	public double jurosPoupanca(double saldo) {
+		return super.getSaldo()*0.003;
 	}
 
 }
